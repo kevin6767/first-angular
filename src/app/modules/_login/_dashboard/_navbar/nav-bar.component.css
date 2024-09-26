@@ -1,0 +1,27 @@
+.app-navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.app-navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.app-navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.app-navbar-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.app-navbar-links a:hover {
+  color: #007bff;
+}
