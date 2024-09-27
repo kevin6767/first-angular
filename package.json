@@ -1,12 +1,16 @@
 {
   "name": "first-angular-app",
   "version": "0.0.0",
+  "main": "app.js",
+  "description": "learning angular and electron with .exe file",
+  "author": "Kevin Eslick",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng build --base-href ./ && electron .",
+    "build": "ng build && electron-forge make",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "make": "electron-forge make"
   },
   "private": true,
   "dependencies": {
@@ -27,7 +31,10 @@
     "@angular-devkit/build-angular": "^17.3.10",
     "@angular/cli": "^17.3.10",
     "@angular/compiler-cli": "^17.3.0",
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
     "@types/jasmine": "~5.1.0",
+    "electron": "^32.1.2",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -35,5 +42,20 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.2"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "first-angular-app",
+            "authors": "Kevin Eslick",
+            "description": "learning angular and electron with .exe file"
+          }
+        }
+      ]
+    }
   }
 }
