@@ -6,7 +6,8 @@
   "author": "Kevin Eslick",
   "scripts": {
     "ng": "ng",
-    "start": "ng build --base-href ./ && electron .",
+    "electron": "ng build --base-href ./ && electron .",
+    "start": "ng serve",
     "build": "ng build && electron-forge make",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

@@ -6,6 +6,7 @@ import { LoginComponent } from './modules/login/login.component';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { login, logout } from './actions/isLoggedIn.actions';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { login, logout } from './actions/isLoggedIn.actions';
     NavbarComponent,
     LoginComponent,
     RouterModule,
+    HttpClientModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
