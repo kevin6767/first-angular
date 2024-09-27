@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
-import { NavbarComponent } from './modules/_login/_dashboard/_navbar/nav-bar.component';
+import { Component, inject } from '@angular/core';
+import { NavbarComponent } from './modules/navbar/nav-bar.component';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { LoginComponent } from './modules/login/login.component';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { login, logout } from './actions/isLoggedIn.actions';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavbarComponent,
+    LoginComponent,
+    RouterModule,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
