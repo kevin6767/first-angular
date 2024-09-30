@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { login, logout } from '../../actions/isLoggedIn.actions';
 import { selectIsLoggedIn } from '../../selectors/isLoggedIn.selector';
+import { AuthGoogleService } from '../../services/auth-google.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ import { selectIsLoggedIn } from '../../selectors/isLoggedIn.selector';
 })
 export class NavbarComponent {
   isLoggedIn?: boolean;
+  private authService = inject(AuthGoogleService); // Assume AuthService is injected as a dependency
 
   private store = inject(Store);
 
@@ -25,11 +27,14 @@ export class NavbarComponent {
   }
 
   logout() {
+    this.authService.logout();
     this.store.dispatch(logout());
     console.log(this.isLoggedIn); // Should now be true after logout call
   }
 
   login() {
+    this.authService.login();
+    console.log('Login successful');
     this.store.dispatch(login());
   }
 

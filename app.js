@@ -8,6 +8,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    titleBarOverlay: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -24,6 +25,8 @@ function createWindow() {
       slashes: true,
     }),
   );
+
+  mainWindow.removeMenu(); // Remove default menu bar
 
   // Open DevTools for debugging
   mainWindow.webContents.openDevTools();

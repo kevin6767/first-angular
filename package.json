@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@ngrx/store": "^17.2.0",
+    "angular-oauth2-oidc": "^17.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -35,6 +36,7 @@
     "@electron-forge/cli": "^7.5.0",
     "@electron-forge/maker-squirrel": "^7.5.0",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^22.7.4",
     "electron": "^32.1.2",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
